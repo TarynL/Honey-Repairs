@@ -35,7 +35,7 @@ export const CustomerList = () => {
             {
                 customers.slice(0, 5).map(
                     (customer) => {
-                        return <p>{customer.name}</p>
+                        return <p key={customer.id}>{customer.name}</p>
                     }
                 )
             }

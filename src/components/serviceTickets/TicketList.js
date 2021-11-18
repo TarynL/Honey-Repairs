@@ -20,7 +20,7 @@ export const TicketList = () => {
             <div>
                 {
                     tickets.map(ticket => {
-                        return <p>{ticket.description} Submitted by {ticket.customer.name} and worked on by {ticket.employee.name}</p>
+                        return <p key={ticket.id}>{ticket.description} Submitted by {ticket.customer.name} and worked on by {ticket.employee.name}</p>
                     }
                     )
                 }
