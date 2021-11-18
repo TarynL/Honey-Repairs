@@ -14,7 +14,7 @@ export const TicketForm = () => {
             emergency: ticket.emergency,
             customerId: parseInt(localStorage.getItem("honey_customer")),
             employeeId: 1,
-            dateCompleted: ""
+            dateCompleted: Date.now()
         }
         return fetch("http://localhost:8088/serviceTickets", {
             method: "POST",
@@ -56,7 +56,7 @@ export const TicketForm = () => {
                         onChange={
                             (event) => {
                                 const copy = { ...ticket }
-                                copy.emergency = event.target.value
+                                copy.emergency = event.target.checked
                                 updateTicket(copy)
                             }
                         } />
